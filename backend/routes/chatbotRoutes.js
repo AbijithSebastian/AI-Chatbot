@@ -8,6 +8,12 @@ const openai = new OpenAI({
     baseURL: "https://openrouter.ai/api/v1", 
 });
 
+// ✅ Test Route to Check API
+router.get("/chat", (req, res) => {
+    res.json({ message: "Chatbot API is working! Use POST /api/chat to chat." });
+});
+
+// ✅ Chatbot Response Route
 router.post("/chat", async (req, res) => {
     try {
         const { message } = req.body;

@@ -12,12 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ Root Route to Check If Server is Running
-app.get("/", (req, res) => {
-    res.send("Backend is running successfully!");
-});
-
-// ✅ Chatbot API Routes
+// ✅ Make sure the route is correctly prefixed
 app.use("/api", chatRoutes);
 
 const PORT = process.env.PORT || 5000;
